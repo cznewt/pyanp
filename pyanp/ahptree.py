@@ -817,7 +817,7 @@ def ahptree_fromdf(colinfos, currentAHPTree=None, currentNode=None) -> AHPTree:
     The AHPTree that contains the data from the spreadsheet
     '''
     if isinstance(colinfos, str):
-        colinfos = pd.read_excel(colinfos)
+        colinfos = pd.read_excel(colinfos, index_col=0)
     df = colinfos
     if isinstance(colinfos, pd.DataFrame):
         colinfos = _colinfos_fromdf(colinfos)
